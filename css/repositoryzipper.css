@@ -1,0 +1,36 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+  }
+  
+  [data-toggle="tooltip"] {
+    border-bottom: 1px dotted black;
+  }
+  
+  /* Patches until Bootstrap v4.0.0-beta is released. */
+  .input-group-btn {
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .input-group-btn > .btn {
+    flex: none;
+  }
+  
+  .input-group-btn a {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .input-group-btn button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }

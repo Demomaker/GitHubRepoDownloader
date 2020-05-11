@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"
+        integrity="sha384-N7gull5mxE2uLDqZ+kcZolhmuopwLtTcThUsVnUS2LVMQljojN9cfJ9A6fUA63zB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/repositoryzipper.css">
+    <title>Repository Zipper - zip many repositories in one zip file</title>
+    <meta name="description" content="Zip your GitHub repositories in one file.">
+    <link rel="canonical" href="https://GitHubRepoZipper.github.io">
+</head>
+
+<body class="mb-5">
+    <nav class="navbar navbar-inverse bg-inverse">
+        <a class="navbar-brand" href="/">GitHub Repository Zipper</a>
+    </nav>
+
+    <header class="pt-5 text-center">
+        <div class="container">
+            <h1 class="display-4">Zip your GitHub repositories in one file.</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="form-horizontal" id="zipForm">
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="repository">Repo</label>
+                    <div class="col-md-4">
+                        <input id="repository" name="repository" type="text"
+                            placeholder="Ex: https://github.com/Demomaker/GitHubRepoZipper"
+                            class="form-control input-md">
+                    </div>
+                </div>
+
+                <!-- Button -->
+
+            </form>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="addbutton">Add Repo</label>
+                <div class="col-md-4">
+                    <button id="addbutton" name="addbutton" class="btn btn-primary" onclick="addRepo()">Add</button>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="zipbutton">Zip Files</label>
+                <div class="col-md-4">
+                    <button id="zipbutton" name="zipbutton" class="btn btn-primary" onclick="zipRepos()">Zip</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="text-muted">Built by <a href="https://social.demomaker.net">Demomaker</a>.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.5.0/async.min.js"
+        integrity="sha384-n4kFbvGyjqv9rvEitwLxGTr6T2iX5AypfPZ06nIj0l34MdTHtruqnXpOXyAnTsl2"
+        crossorigin="anonymous"></script>
+    <script src="js/repositoryzipper.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/FileSaver.js"></script>
+</body>
+
+</html>
