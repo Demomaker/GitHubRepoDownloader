@@ -2,7 +2,7 @@ import sys
 
 
 def get_zip_from_link(link):
-    print(link)
+    print(link + "/archive/master.zip")
 
 
 def main():
