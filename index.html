@@ -29,35 +29,21 @@
     </header>
 
     <main>
-        <div class="container">
-            <form class="form-horizontal" id="zipForm">
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="repository">Repo</label>
-                    <div class="col-md-4">
-                        <input id="repository" name="repository" type="text"
-                            placeholder="Ex: https://github.com/Demomaker/GitHubRepoZipper"
-                            class="form-control input-md">
-                    </div>
-                </div>
-
-                <!-- Button -->
-
-            </form>
-
+        <div class="container" style="padding:5px;">
+            <div class="input-group">
+                <input id="repository" name="repository" type="text"
+                            placeholder="Link to repository; Ex: https://github.com/Demomaker/GitHubRepoZipper"
+                            class="form-control width80">
+                <span class="input-group-btn">
+                    <button id="addbutton" name="addbutton" class="btn btn-info width20" onclick="addRepo()">Add</button>
+                </span>
+            </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="addbutton">Add Repo</label>
-                <div class="col-md-4">
-                    <button id="addbutton" name="addbutton" class="btn btn-primary" onclick="addRepo()">Add</button>
+                <div id="repositoryList" name="repositoryList" class="repoListBackground">
                 </div>
             </div>
-
-            <!-- Button -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="zipbutton">Zip Files</label>
-                <div class="col-md-4">
-                    <button id="zipbutton" name="zipbutton" class="btn btn-primary" onclick="zipRepos()">Zip</button>
-                </div>
+                    <button id="zipbutton" name="zipbutton" class="btn btn-primary" onclick="zipRepos()">Zip Repositories</button>
             </div>
         </div>
 
