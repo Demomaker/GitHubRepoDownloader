@@ -1,11 +1,48 @@
 var repos = [];
+var repoParameterName = "repo";
 
 function addRepo() 
 {
     var repository = document.getElementById("repository").value;
+    addSpecificRepo(repository);
+    document.getElementById("repository").value = "";
+    updateURLWithCurrentRepos();
+}
+
+function addSpecificRepo(repository) 
+{
     repos.push(repository);
     addRepoToList(repository);
-    document.getElementById("repository").value = "";
+}
+
+function updateURLWithCurrentRepos() 
+{
+    var repoString = "";
+    repos.forEach((item, index) => {
+        repoString += item;
+    });
+    setParameter(repoParameterName, repoString);
+}
+
+function setParameter(name, value) {
+    var searchParams = new URLSearchParams(window.location.search)
+    searchParams.set(name, value);
+    var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
+}
+
+function retrieveRepositoriesInURL() {
+    var repoString = getParameter(repoParameterName);
+    if(repoString == null || repoString == "") return;
+    var temp = [];
+    temp = repoString.split("+");
+    temp.forEach((item, index) => {
+        addSpecificRepo(item);
+    });
+}
+
+function getParameter(name) {
+    return URLSearchParams.get(name);
 }
 
 function zipRepos() 
@@ -69,7 +106,8 @@ function addRepoToList(repo)
     var labelBreak = document.createElement("br");
     var button = document.createElement("button");
     var buttonText = document.createTextNode("Remove");
-
+    
+    document.onload = retrieveRepositoriesInURL();
     repositoryDiv.id = "Repo" + repos.indexOf(repo);
     button.id = "Button" + repos.indexOf(repo);
     button.onclick = function() {removeRepoWithButton(button);};
