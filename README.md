@@ -9,7 +9,7 @@ Use this to download many repositories at the same time.
 
 This only works for public repositories for the moment.
 
-[Website Link](https://demomaker.github.io/GitHubRepoZipper/)
+[Website Link](https://demomaker.github.io/GitHubRepoDownloader/)
 
 ## FR
 
@@ -19,4 +19,4 @@ Utiliser ceci pour télécharger plusieurs répertoires en même temps.
 
 Ceci fonctionne seulement pour des répertoires publiques pour le moment.
 
-[Lien vers le site web](https://demomaker.github.io/GitHubRepoZipper/)
+[Lien vers le site web](https://demomaker.github.io/GitHubRepoDownloader/)
