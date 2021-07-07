@@ -108,7 +108,6 @@ function addRepoToList(repo)
     var button = document.createElement("button");
     var buttonText = document.createTextNode("Remove");
     
-    document.onload = retrieveRepositoriesInURL();
     repositoryDiv.id = "Repo" + repos.indexOf(repo);
     button.id = "Button" + repos.indexOf(repo);
     button.onclick = function() {removeRepoWithButton(button);};
