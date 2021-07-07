@@ -132,6 +132,7 @@ function removeRepoWithButton(button)
     var repoDivID = "Repo" + repos.indexOf(repo);
     document.getElementById(repoDivID).remove();
     removeItemOnce(repos, repo);
+    updateURLWithCurrentRepos();
 }
 
 function removeItemOnce(arr, value) { 
