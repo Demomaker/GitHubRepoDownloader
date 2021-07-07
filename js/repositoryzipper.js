@@ -19,6 +19,8 @@ function updateURLWithCurrentRepos()
 {
     var repoString = "";
     repos.forEach((item, index) => {
+        if(index != 0)
+            repoString += "+";
         repoString += item;
     });
     setParameter(repoParameterName, repoString);
