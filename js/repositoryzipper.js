@@ -36,8 +36,7 @@ function setParameter(name, value) {
 function retrieveRepositoriesInURL() {
     var repoString = getParameter(repoParameterName);
     if(repoString == null || repoString == "") return;
-    var temp = [];
-    temp = repoString.split("+");
+    var temp = repoString.split("+");
     temp.forEach((item, index) => {
         addSpecificRepo(item);
     });
