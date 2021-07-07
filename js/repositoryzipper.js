@@ -42,7 +42,8 @@ function retrieveRepositoriesInURL() {
 }
 
 function getParameter(name) {
-    return URLSearchParams.get(name);
+    let params = new URLSearchParams(document.location.search.substring(1));
+    return params.get(name);
 }
 
 function zipRepos() 
