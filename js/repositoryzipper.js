@@ -162,6 +162,12 @@ function removeItemOnce(arr, value) {
     return arr;
 }
 
-document.getElementById("repository").onchange = onRepositoryTextValueChange();
-onRepositoryTextValueChange();
-onRepoListUpdate();
+function onPageLoad() 
+{
+  document.getElementById("repository").onchange = onRepositoryTextValueChange();
+  onRepositoryTextValueChange();
+  onRepoListUpdate();
+  retrieveRepositoriesInURL();
+}
+
+
