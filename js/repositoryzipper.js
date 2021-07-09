@@ -26,7 +26,7 @@ function addRepo()
 
 function addSpecificRepo(repository) 
 {
-    if(!repository.includes("https://github.com/")) repository = "https://github.com/" + repository;
+    if(repository.includes("https://github.com/")) repository = repository.replace("https://github.com", "");
     repos.push(repository);
     addRepoToList(repository);
 }
@@ -76,9 +76,14 @@ function getForm()
     return form;
 }
 
+function getGitHubLink(repository)
+{
+    return "https://github.com/" + repository;
+}
+
 function getZipDownloadLink(repository) 
 {
-    return repository + "/archive/master.zip";
+    return getGitHubLink(repository) + "/archive/master.zip";
 }
 
 function downloadAll() 
@@ -120,7 +125,7 @@ function addRepoToList(repo)
     var repositoryList = document.getElementById("repositoryList");
     var repositoryDiv = document.createElement("div");
     var repositoryLinker = document.createElement("a");
-    var textnode = document.createTextNode(repo);
+    var textnode = document.createTextNode(getGitHubLink(repo));
     var spacenode = document.createTextNode(" ");
     var labelBreak = document.createElement("br");
     var button = document.createElement("button");
