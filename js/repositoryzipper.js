@@ -164,7 +164,7 @@ function removeItemOnce(arr, value) {
 
 function onPageLoad() 
 {
-  document.getElementById("repository").onchange = onRepositoryTextValueChange();
+  document.getElementById("repository").oninput = onRepositoryTextValueChange();
   onRepositoryTextValueChange();
   onRepoListUpdate();
   retrieveRepositoriesInURL();
