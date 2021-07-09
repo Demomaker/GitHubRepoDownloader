@@ -18,13 +18,14 @@ function addRepo()
 {
     var repository = document.getElementById("repository").value;
     document.getElementById("repository").value = "";
+    if(repository == undefined || repository == "" || repository.length <= 0) return;
     addSpecificRepo(repository);
     updateURLWithCurrentRepos();
 }
 
 function addSpecificRepo(repository) 
 {
-    if(!repository.includes("github")) repository = "https://github.com/" + repository;
+    if(!repository.includes("https://github.com/")) repository = "https://github.com/" + repository;
     repos.push(repository);
     addRepoToList(repository);
 }
