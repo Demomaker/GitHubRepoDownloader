@@ -7,9 +7,9 @@ function onRepoListUpdate()
     else document.getElementById("zipbutton").disabled = false;
 }
 
-function onRepositoryTextValueChange() 
+function onRepositoryTextValueChange(newValue) 
 {
-    var repository = document.getElementById("repository").value;
+    var repository = newValue;
     if(repository == undefined || repository == "" || repository.length <= 0) document.getElementById("addbutton").disabled = true;
     else document.getElementById("addbutton").disabled = false;
 }
@@ -164,7 +164,6 @@ function removeItemOnce(arr, value) {
 
 function onPageLoad() 
 {
-  document.getElementById("repository").oninput = onRepositoryTextValueChange();
   onRepositoryTextValueChange();
   onRepoListUpdate();
   retrieveRepositoriesInURL();
