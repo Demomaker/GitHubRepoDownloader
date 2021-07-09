@@ -18,6 +18,7 @@ function addRepo()
 {
     var repository = document.getElementById("repository").value;
     document.getElementById("repository").value = "";
+    onRepositoryTextValueChange("");
     if(repository == undefined || repository == "" || repository.length <= 0) return;
     addSpecificRepo(repository);
     updateURLWithCurrentRepos();
