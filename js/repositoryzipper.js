@@ -1,16 +1,33 @@
 var repos = [];
 var repoParameterName = "repo";
 
+document.getElementById("repository").onchange = onRepositoryTextValueChange();
+onRepoListUpdate();
+
+function onRepoListUpdate() 
+{
+    if(repos == null || repos == []) document.getElementById("zipbutton").disabled = true;
+    else document.getElementById("zipbutton").disabled = false;
+}
+
+function onRepositoryTextValueChange() 
+{
+    var repository = document.getElementById("repository").value;
+    if(repository == null || repository == "") document.getElementById("addButton").disabled = true;
+    else document.getElementById("addButton").disabled = false;
+}
+
 function addRepo() 
 {
     var repository = document.getElementById("repository").value;
-    addSpecificRepo(repository);
     document.getElementById("repository").value = "";
+    addSpecificRepo(repository);
     updateURLWithCurrentRepos();
 }
 
 function addSpecificRepo(repository) 
 {
+    if(!repository.includes("github")) repository = "https://github.com/" + repository;
     repos.push(repository);
     addRepoToList(repository);
 }
@@ -125,6 +142,7 @@ function addRepoToList(repo)
     }
 
     repositoryList.appendChild(repositoryDiv);
+    onRepoListUpdate();
 }
 
 function removeRepoWithButton(button) 
@@ -135,6 +153,7 @@ function removeRepoWithButton(button)
     document.getElementById(repoDivID).remove();
     removeItemOnce(repos, repo);
     updateURLWithCurrentRepos();
+    onRepoListUpdate();
 }
 
 function removeItemOnce(arr, value) { 
