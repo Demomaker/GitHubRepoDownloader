@@ -1,20 +1,16 @@
 var repos = [];
 var repoParameterName = "repo";
 
-document.getElementById("repository").onchange = onRepositoryTextValueChange();
-onRepositoryTextValueChange();
-onRepoListUpdate();
-
 function onRepoListUpdate() 
 {
-    if(repos == null || repos == []) document.getElementById("zipbutton").disabled = true;
+    if(repos == undefined || repos.length <= 0) document.getElementById("zipbutton").disabled = true;
     else document.getElementById("zipbutton").disabled = false;
 }
 
 function onRepositoryTextValueChange() 
 {
     var repository = document.getElementById("repository").value;
-    if(repository == null || repository == "") document.getElementById("addButton").disabled = true;
+    if(repository == undefined || repository == "" || repository.length <= 0) document.getElementById("addButton").disabled = true;
     else document.getElementById("addButton").disabled = false;
 }
 
@@ -164,3 +160,7 @@ function removeItemOnce(arr, value) {
     }
     return arr;
 }
+
+document.getElementById("repository").onchange = onRepositoryTextValueChange();
+onRepositoryTextValueChange();
+onRepoListUpdate();
