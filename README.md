@@ -13,7 +13,7 @@ This only works for public repositories for the moment.
 
 ## FR
 
-Téléchargeur de répertoire GitHub (Télécharger plusieurs répertoires github en un lancer)
+Téléchargeur de répertoire GitHub (Télécharger plusieurs répertoires github en un coup)
 
 Utiliser ceci pour télécharger plusieurs répertoires en même temps.
 
