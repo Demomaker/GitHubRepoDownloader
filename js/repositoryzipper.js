@@ -10,8 +10,8 @@ function onRepoListUpdate()
 function onRepositoryTextValueChange() 
 {
     var repository = document.getElementById("repository").value;
-    if(repository == undefined || repository == "" || repository.length <= 0) document.getElementById("addButton").disabled = true;
-    else document.getElementById("addButton").disabled = false;
+    if(repository == undefined || repository == "" || repository.length <= 0) document.getElementById("addbutton").disabled = true;
+    else document.getElementById("addbutton").disabled = false;
 }
 
 function addRepo() 
