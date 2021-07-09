@@ -2,6 +2,7 @@ var repos = [];
 var repoParameterName = "repo";
 
 document.getElementById("repository").onchange = onRepositoryTextValueChange();
+onRepositoryTextValueChange();
 onRepoListUpdate();
 
 function onRepoListUpdate() 
