@@ -20,6 +20,10 @@ html {
     align-items: center;
     flex-direction: row;
   }
+
+  .removeButton {
+    float: right;
+  }
   
   .input-group-btn > .btn {
     flex: none;
