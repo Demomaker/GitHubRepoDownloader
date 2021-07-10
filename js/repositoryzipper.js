@@ -133,6 +133,7 @@ function addRepoToList(repo)
     var buttonText = document.createTextNode("Remove");
     
     repositoryDiv.id = "Repo" + repos.indexOf(repo);
+    repositoryDiv.className = "repositoryDiv";
     button.id = "Button" + repos.indexOf(repo);
     button.onclick = function() {removeRepoWithButton(button);};
     repositoryLinker.appendChild(textnode);
