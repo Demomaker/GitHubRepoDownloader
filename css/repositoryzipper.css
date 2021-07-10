@@ -26,6 +26,10 @@ html {
     flex-direction: row;
     float: right;
   }
+
+  .repositoryDiv {
+    clear: both;
+  }
   
   .input-group-btn > .btn {
     flex: none;
