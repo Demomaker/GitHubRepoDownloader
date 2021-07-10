@@ -129,6 +129,7 @@ function addRepoToList(repo)
     var spacenode = document.createTextNode(" ");
     var labelBreak = document.createElement("br");
     var button = document.createElement("button");
+    button.className = "removeButton";
     var buttonText = document.createTextNode("Remove");
     
     repositoryDiv.id = "Repo" + repos.indexOf(repo);
