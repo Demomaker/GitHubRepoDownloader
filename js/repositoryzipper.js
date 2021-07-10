@@ -26,7 +26,7 @@ function addRepo()
 
 function addSpecificRepo(repository) 
 {
-    if(repository.includes("https://github.com/")) repository = repository.replace("https://github.com", "");
+    if(repository.includes("https://github.com/")) repository = repository.replace("https://github.com/", "");
     repos.push(repository);
     addRepoToList(repository);
 }
