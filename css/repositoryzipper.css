@@ -28,6 +28,7 @@ html {
   }
 
   .repositoryDiv {
+    height: auto;
     clear: both;
   }
   
@@ -46,5 +47,7 @@ html {
   }
 
   .repoListBackground {
-    background-color: antiquewhite;
+    height: auto;
+    clear: both;
+    background-color: #e1eaea;
   }
