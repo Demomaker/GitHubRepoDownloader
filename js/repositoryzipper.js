@@ -88,36 +88,42 @@ function getZipDownloadLink(repository)
 
 function downloadAll() 
 {
-    var link = document.createElement('a');
+    downloadRepositories();
+    /**var link = document.createElement('a');
 
     link.style.display = 'none';
 
     document.body.appendChild(link);
-    
-    link.setAttribute('download', getZipDownloadLink(repos[i]));
 
     for(var i = 0; i < repos.length; i++) 
     {
+        link.setAttribute('download', getZipDownloadLink(repos[i]));
         link.setAttribute('href', getZipDownloadLink(repos[i]));
         link.click();
     }
 
-    document.body.removeChild(link);
+    document.body.removeChild(link);**/
 }
 
-function download(urls) {
-    urls.forEach(url => {
-      let iframe = document.createElement('iframe');
-      iframe.style.visibility = 'collapse';
-      document.body.append(iframe);
-      url = getZipDownloadLink(url);
-      iframe.contentDocument.write(
-        `<form action="${url.replace(/\"/g, '"')}" method="GET"></form>`
-      );
-      iframe.contentDocument.forms[0].submit();
-
-      setTimeout(() => iframe.remove(), 2000);
-    });
+function downloadRepositories() {
+    var urls = repos.map(getZipDownloadLink);
+    var zipFilename = "GithubRepos.zip";
+    repos.forEach(function(repo){
+    var url = getZipDownloadLink(repo);
+    var filename = repo;
+  // loading a file and add it in a zip file
+  JSZipUtils.getBinaryContent(url, function (err, data) {
+     if(err) {
+        throw err; // or handle the error
+     }
+     zip.file(filename, data, {binary:true});
+     count++;
+     if (count == urls.length) {
+       var zipFile = zip.generate({type: "blob"});
+       saveAs(zipFile, zipFilename);
+     }
+  });
+});
   }
 
 function addRepoToList(repo) 
