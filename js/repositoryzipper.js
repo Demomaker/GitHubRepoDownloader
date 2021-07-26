@@ -1,4 +1,3 @@
-import JSZipUtils from 'jszip-utils.js';
 var repos = [];
 var repoParameterName = "repo";
 
