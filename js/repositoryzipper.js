@@ -66,7 +66,7 @@ function getParameter(name) {
 
 function zipRepos() 
 {
-    download(repos);
+    downloadRepositories();
 }
 
 function getForm() 
@@ -89,7 +89,7 @@ function getZipDownloadLink(repository)
 function downloadAll() 
 {
     downloadRepositories();
-    /**var link = document.createElement('a');
+    var link = document.createElement('a');
 
     link.style.display = 'none';
 
@@ -102,7 +102,7 @@ function downloadAll()
         link.click();
     }
 
-    document.body.removeChild(link);**/
+    document.body.removeChild(link);
 }
 
 function downloadRepositories() {
